@@ -1,0 +1,28 @@
+package benchmark
+
+const size = 1000 * 1000
+
+var values = []interface{}{
+	"0123456789",
+	"0123456789abcdefghijklmnopqrstuvwxyz",
+	`longtextlongtextlongtextlongtextlongtextlongtextlongtextlongtextlongtextlongtext
+longtextlongtextlongtextlongtextlongtextlongtextlongtextlongtextlongtextlongtext
+longtextlongtextlongtextlongtextlongtextlongtextlongtextlongtextlongtextlongtext
+longtextlongtextlongtextlongtextlongtextlongtextlongtextlongtextlongtextlongtext
+longtextlongtextlongtextlongtextlongtextlongtextlongtextlongtextlongtextlongtext
+longtextlongtextlongtextlongtextlongtextlongtextlongtextlongtextlongtextlongtext
+longtextlongtextlongtextlongtextlongtextlongtextlongtextlongtextlongtextlongtext
+longtextlongtextlongtextlongtextlongtextlongtextlongtextlongtextlongtextlongtext
+longtextlongtextlongtextlongtextlongtextlongtextlongtextlongtextlongtextlongtext
+longtextlongtextlongtextlongtextlongtextlongtextlongtextlongtextlongtextlongtext`,
+	0, 1, 2, 3,
+	3.1, 3.14, 3.141, 3.1415,
+}
+
+func key(i int) string {
+	return string(i)
+}
+
+func value(i int) interface{} {
+	return values[i%len(values)]
+}
